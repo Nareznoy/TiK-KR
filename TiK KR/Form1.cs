@@ -121,11 +121,11 @@ namespace TiK_KR
             huffmanCode_textBox.Text = _huffmanTree.Encode(huffmanInputStr_textBox.Text); // Построение дерева Хаффмана
 
             // Вывод кодов на интерфейс
-            for (var i = 0; i < _huffmanTree.CodesDictionary.Count; i++)
+            for (var i = 0; i < _huffmanTree.GetCodesDictionary.Count; i++)
             {
-                var currentStr = _huffmanTree.Alphabet.Keys.ElementAt(i);
-                dataGridView1.Rows.Add("'" + currentStr + "'", Math.Round(_huffmanTree.Alphabet[currentStr], 2),
-                    _huffmanTree.CodesDictionary[currentStr]);
+                var currentStr = _huffmanTree.GetAlphabet.Keys.ElementAt(i);
+                dataGridView1.Rows.Add("'" + currentStr + "'", Math.Round(_huffmanTree.GetAlphabet[currentStr], 2),
+                    _huffmanTree.GetCodesDictionary[currentStr]);
             }
         }
 

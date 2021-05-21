@@ -6,8 +6,24 @@ namespace TiK_KR
     internal class HuffmanTree
     {
         private Node _head;
-        public Dictionary<string, double> Alphabet;
-        public Dictionary<string, string> CodesDictionary;
+        private Dictionary<string, double> _alphabet;
+        private Dictionary<string, string> _codesDictionary;
+
+        public Dictionary<string, string> GetCodesDictionary
+        {
+            get
+            {
+                return _codesDictionary;
+            }
+        }
+
+        public Dictionary<string, double> GetAlphabet
+        {
+            get
+            {
+                return _alphabet;
+            }
+        }
 
 
         /// <summary>
@@ -16,14 +32,14 @@ namespace TiK_KR
         /// <param name="inputNodes"> Очередь входных узлов </param>
         public string Encode(string inputStr)
         {
-            Alphabet = GetAlphabet(inputStr);
-            Alphabet = Alphabet.OrderBy(symbol => symbol.Key)
+            _alphabet = CalculateAlphabet(inputStr);
+            _alphabet = _alphabet.OrderBy(symbol => symbol.Key)
                 .ToDictionary(pair => pair.Key, pair => pair.Value);
 
             var nodes = new Queue<Node>();
 
-            for (var i = 0; i < Alphabet.Count; i++)
-                nodes.Enqueue(new Node(Alphabet.Values.ElementAt(i), Alphabet.Keys.ElementAt(i)));
+            for (var i = 0; i < _alphabet.Count; i++)
+                nodes.Enqueue(new Node(_alphabet.Values.ElementAt(i), _alphabet.Keys.ElementAt(i)));
 
             nodes = new Queue<Node>(nodes.OrderBy(node => node.Frequency)); // Сортировка по возрастанию по частоте
 
@@ -35,19 +51,19 @@ namespace TiK_KR
 
             _head = nodes.Dequeue();
 
-            CodesDictionary = GetCodesDictionary(); // Построение словаря символов и кодов
+            _codesDictionary = CalculateCodesDictionary(); // Построение словаря символов и кодов
 
             var outputHuffmanCode = "";
             foreach (var c in inputStr)
             {
-                CodesDictionary.TryGetValue(c.ToString(), out var currentCode);
+                _codesDictionary.TryGetValue(c.ToString(), out var currentCode);
                 outputHuffmanCode += currentCode;
             }
 
             return outputHuffmanCode;
         }
 
-        private Dictionary<string, double> GetAlphabet(string inputStr)
+        private Dictionary<string, double> CalculateAlphabet(string inputStr)
         {
             var alphabet = inputStr
                 .GroupBy(c => c.ToString().ToLower())
@@ -60,10 +76,10 @@ namespace TiK_KR
         ///     Получение словаря кодов для символов обходом дерева в глубину
         /// </summary>
         /// <returns></returns>
-        private Dictionary<string, string> GetCodesDictionary()
+        private Dictionary<string, string> CalculateCodesDictionary()
         {
             _head.FindCode();
-            CodesDictionary = new Dictionary<string, string>();
+            _codesDictionary = new Dictionary<string, string>();
             var stack = new Stack<Node>();
 
             // Обход дерева Хаффмана в глубину
@@ -71,17 +87,17 @@ namespace TiK_KR
             while (stack.Count != 0)
             {
                 var tempNode = stack.Pop();
-                if (tempNode.Symbol != null) CodesDictionary.Add(tempNode.Symbol, tempNode.Code);
+                if (tempNode.Symbol != null) _codesDictionary.Add(tempNode.Symbol, tempNode.Code);
 
                 if (tempNode.Left != null) stack.Push(tempNode.Left);
                 if (tempNode.Right != null) stack.Push(tempNode.Right);
             }
 
             // Сортирвка полученного словаря символов и кодов
-            CodesDictionary = CodesDictionary.OrderBy(symbol => symbol.Key)
+            _codesDictionary = _codesDictionary.OrderBy(symbol => symbol.Key)
                 .ToDictionary(pair => pair.Key, pair => pair.Value);
 
-            return CodesDictionary;
+            return _codesDictionary;
         }
 
 
