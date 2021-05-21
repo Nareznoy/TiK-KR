@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31005.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TiK KR", "TiK KR\TiK KR.csproj", "{19516E10-8747-4D47-8597-14CEFE43190B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{19516E10-8747-4D47-8597-14CEFE43190B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19516E10-8747-4D47-8597-14CEFE43190B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19516E10-8747-4D47-8597-14CEFE43190B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19516E10-8747-4D47-8597-14CEFE43190B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CE279544-C474-4ABF-B631-9184DA688491}
+	EndGlobalSection
+EndGlobal
