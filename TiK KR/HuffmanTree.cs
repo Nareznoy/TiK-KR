@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System;
 
 namespace TiK_KR
 {
@@ -33,8 +34,6 @@ namespace TiK_KR
         public string Encode(string inputStr)
         {
             _alphabet = CalculateAlphabet(inputStr);
-            _alphabet = _alphabet.OrderBy(symbol => symbol.Key)
-                .ToDictionary(pair => pair.Key, pair => pair.Value);
 
             var nodes = new Queue<Node>();
 
@@ -68,6 +67,9 @@ namespace TiK_KR
             var alphabet = inputStr
                 .GroupBy(c => c.ToString().ToLower())
                 .ToDictionary(g => g.Key, g => (double) g.Count() / inputStr.Length);
+
+            alphabet = alphabet.OrderByDescending(symbol => symbol.Value)
+                .ToDictionary(pair => pair.Key, pair => pair.Value);
 
             return alphabet;
         }
@@ -135,6 +137,29 @@ namespace TiK_KR
             }
 
             return decodeString;
+        }
+
+        public double CalculateEntropy()
+        {
+            double entropy = 0;
+            foreach (KeyValuePair<string, double> pair in _alphabet)
+            {
+                entropy += pair.Value * Math.Log(pair.Value, 2);
+            }
+            return -entropy;
+        }
+
+        public double CalculateAverageCodeLength()
+        {
+            double averageCodeLength = 0;
+            foreach (KeyValuePair<string, double> pair in _alphabet)
+            {
+                string currentStr = pair.Key;
+                _codesDictionary.TryGetValue(currentStr, out string code);
+                _alphabet.TryGetValue(currentStr, out double probability);
+                averageCodeLength += code.Length * probability;
+            }
+            return averageCodeLength;
         }
     }
 }

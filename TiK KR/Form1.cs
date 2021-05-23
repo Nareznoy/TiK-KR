@@ -9,11 +9,10 @@ namespace TiK_KR
     public partial class Form1 : Form
     {
         private readonly List<long> _CRCs = new List<long>(); // CRC коды входных блоков данных
-
-
         private readonly List<long> _inputMessages = new List<long>(); // Входные блоки данных
         private readonly List<bool> _isCorrect = new List<bool>(); // Содержит информацию о проверенных блоках данных
         private readonly List<long> _messagesForCheck = new List<long>(); // Принятые сообщения для проверки
+
         private HuffmanTree _huffmanTree;
 
         public Form1()
@@ -60,6 +59,8 @@ namespace TiK_KR
                 CalculatedCRC_textBox.Text += Convert.ToString(_CRCs.Last(), 2) + " ";
                 InputCRC_textBox.Text += Convert.ToString(_CRCs.Last(), 2) + " ";
             }
+
+            
         }
 
         private void CheckData_button_Click_1(object sender, EventArgs e)
@@ -119,14 +120,18 @@ namespace TiK_KR
 
             _huffmanTree = new HuffmanTree();
             huffmanCode_textBox.Text = _huffmanTree.Encode(huffmanInputStr_textBox.Text); // Построение дерева Хаффмана
+            
+            entropyLabel.Text = "Энтропия: " + Math.Round(_huffmanTree.CalculateEntropy(), 3).ToString();
+            averageLengthLabel.Text = "Средняя длина сообщения: " + Math.Round(_huffmanTree.CalculateAverageCodeLength(), 3).ToString();
 
             // Вывод кодов на интерфейс
             for (var i = 0; i < _huffmanTree.GetCodesDictionary.Count; i++)
             {
                 var currentStr = _huffmanTree.GetAlphabet.Keys.ElementAt(i);
-                dataGridView1.Rows.Add("'" + currentStr + "'", Math.Round(_huffmanTree.GetAlphabet[currentStr], 2),
+                dataGridView1.Rows.Add("'" + currentStr + "'", Math.Round(_huffmanTree.GetAlphabet[currentStr], 3),
                     _huffmanTree.GetCodesDictionary[currentStr]);
             }
+
         }
 
         private void button2_Click(object sender, EventArgs e)

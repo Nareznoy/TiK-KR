@@ -74,6 +74,8 @@ namespace TiK_KR
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
+            this.averageLengthLabel = new System.Windows.Forms.Label();
+            this.entropyLabel = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -362,9 +364,9 @@ namespace TiK_KR
             this.groupBox4.Controls.Add(this.textBox2);
             this.groupBox4.Controls.Add(this.textBox3);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.groupBox4.Location = new System.Drawing.Point(458, 6);
+            this.groupBox4.Location = new System.Drawing.Point(458, 239);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(331, 528);
+            this.groupBox4.Size = new System.Drawing.Size(331, 295);
             this.groupBox4.TabIndex = 10;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Декодирование";
@@ -372,7 +374,7 @@ namespace TiK_KR
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(11, 253);
+            this.label11.Location = new System.Drawing.Point(9, 166);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(173, 15);
             this.label11.TabIndex = 9;
@@ -381,7 +383,7 @@ namespace TiK_KR
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(12, 107);
+            this.label12.Location = new System.Drawing.Point(10, 20);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(172, 15);
             this.label12.TabIndex = 8;
@@ -389,7 +391,7 @@ namespace TiK_KR
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(111, 227);
+            this.button2.Location = new System.Drawing.Point(109, 140);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(100, 23);
             this.button2.TabIndex = 7;
@@ -399,7 +401,7 @@ namespace TiK_KR
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(8, 125);
+            this.textBox2.Location = new System.Drawing.Point(6, 38);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(317, 96);
@@ -407,7 +409,7 @@ namespace TiK_KR
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(8, 271);
+            this.textBox3.Location = new System.Drawing.Point(6, 184);
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(317, 96);
@@ -437,7 +439,9 @@ namespace TiK_KR
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.averageLengthLabel);
             this.tabPage2.Controls.Add(this.groupBox4);
+            this.tabPage2.Controls.Add(this.entropyLabel);
             this.tabPage2.Controls.Add(this.groupBox3);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
@@ -512,7 +516,7 @@ namespace TiK_KR
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label14.Location = new System.Drawing.Point(262, 224);
+            this.label14.Location = new System.Drawing.Point(260, 137);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(28, 31);
             this.label14.TabIndex = 13;
@@ -522,7 +526,7 @@ namespace TiK_KR
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label16.Location = new System.Drawing.Point(43, 224);
+            this.label16.Location = new System.Drawing.Point(41, 137);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(28, 31);
             this.label16.TabIndex = 12;
@@ -546,6 +550,24 @@ namespace TiK_KR
             this.label18.TabIndex = 15;
             this.label18.Text = "Код Хаффмана";
             // 
+            // averageLengthLabel
+            // 
+            this.averageLengthLabel.AutoSize = true;
+            this.averageLengthLabel.Location = new System.Drawing.Point(467, 85);
+            this.averageLengthLabel.Name = "averageLengthLabel";
+            this.averageLengthLabel.Size = new System.Drawing.Size(149, 13);
+            this.averageLengthLabel.TabIndex = 14;
+            this.averageLengthLabel.Text = "Средняя длина сообщения: ";
+            // 
+            // entropyLabel
+            // 
+            this.entropyLabel.AutoSize = true;
+            this.entropyLabel.Location = new System.Drawing.Point(468, 109);
+            this.entropyLabel.Name = "entropyLabel";
+            this.entropyLabel.Size = new System.Drawing.Size(61, 13);
+            this.entropyLabel.TabIndex = 15;
+            this.entropyLabel.Text = "Энтропия: ";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -566,6 +588,7 @@ namespace TiK_KR
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -617,6 +640,8 @@ namespace TiK_KR
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label averageLengthLabel;
+        private System.Windows.Forms.Label entropyLabel;
     }
 }
 

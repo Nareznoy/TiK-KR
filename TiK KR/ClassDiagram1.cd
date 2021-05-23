@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="TiK_LR__6.CRC">
+    <Position X="0.5" Y="4.75" Width="4" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAgAAEAAAAAAAAAAAAAAAAAAAAAgBAAAA=</HashCode>
+      <FileName>CRC.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TiK_KR.HuffmanTree">
+    <Position X="0.5" Y="0.75" Width="4.25" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAIABAAAAAAAAAAAgAEAAAAAKAAAgARAABAAA=</HashCode>
+      <FileName>HuffmanTree.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TiK_KR.Node">
+    <Position X="9.75" Y="2.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAAQAQAAgQAAAAIAAAAAACACAAAAACAA=</HashCode>
+      <FileName>Node.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="TiK_KR.Form1">
+    <Position X="5" Y="2.25" Width="4.25" />
+    <Members>
+      <Field Name="averageLengthLabel" Hidden="true" />
+      <Field Name="button1" Hidden="true" />
+      <Field Name="button2" Hidden="true" />
+      <Field Name="CalculateCRC_button" Hidden="true" />
+      <Field Name="CalculatedCRC_textBox" Hidden="true" />
+      <Field Name="CheckData_button" Hidden="true" />
+      <Field Name="CheckResultLabel" Hidden="true" />
+      <Field Name="comboBox1" Hidden="true" />
+      <Field Name="comboBox2" Hidden="true" />
+      <Field Name="components" Hidden="true" />
+      <Field Name="dataGridView1" Hidden="true" />
+      <Field Name="entropyLabel" Hidden="true" />
+      <Field Name="groupBox1" Hidden="true" />
+      <Field Name="groupBox2" Hidden="true" />
+      <Field Name="groupBox3" Hidden="true" />
+      <Field Name="groupBox4" Hidden="true" />
+      <Field Name="huffmanCode_textBox" Hidden="true" />
+      <Field Name="huffmanInputStr_textBox" Hidden="true" />
+      <Field Name="InputCRC_textBox" Hidden="true" />
+      <Field Name="label1" Hidden="true" />
+      <Field Name="label10" Hidden="true" />
+      <Field Name="label11" Hidden="true" />
+      <Field Name="label12" Hidden="true" />
+      <Field Name="label13" Hidden="true" />
+      <Field Name="label14" Hidden="true" />
+      <Field Name="label15" Hidden="true" />
+      <Field Name="label16" Hidden="true" />
+      <Field Name="label17" Hidden="true" />
+      <Field Name="label18" Hidden="true" />
+      <Field Name="label2" Hidden="true" />
+      <Field Name="label3" Hidden="true" />
+      <Field Name="label4" Hidden="true" />
+      <Field Name="label5" Hidden="true" />
+      <Field Name="label6" Hidden="true" />
+      <Field Name="label7" Hidden="true" />
+      <Field Name="label8" Hidden="true" />
+      <Field Name="label9" Hidden="true" />
+      <Field Name="message16_textBox" Hidden="true" />
+      <Field Name="message2_textBox" Hidden="true" />
+      <Field Name="messageForCheck_textBox" Hidden="true" />
+      <Field Name="Probability" Hidden="true" />
+      <Field Name="Symbol" Hidden="true" />
+      <Field Name="tabControl1" Hidden="true" />
+      <Field Name="tabPage1" Hidden="true" />
+      <Field Name="tabPage2" Hidden="true" />
+      <Field Name="textBox2" Hidden="true" />
+      <Field Name="textBox3" Hidden="true" />
+      <Field Name="Код" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>/yCCBAAgYCQAAhAQhACAQoBCAAgcAAAAgGACAAAFTRA=</HashCode>
+      <FileName>Form1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
