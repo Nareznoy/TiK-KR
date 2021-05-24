@@ -41,6 +41,8 @@ namespace TiK_KR
             this.messageForCheck_textBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.poly_textBox = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -52,28 +54,28 @@ namespace TiK_KR
             this.message16_textBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.buildHuffmanTree_button = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
+            this.huffmanCode_textBox = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Symbol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Probability = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Код = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.huffmanInputStr_textBox = new System.Windows.Forms.TextBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.decodeHuffman_button = new System.Windows.Forms.Button();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.huffmanInputStr_textBox = new System.Windows.Forms.TextBox();
-            this.huffmanCode_textBox = new System.Windows.Forms.TextBox();
-            this.Symbol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Probability = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Код = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
             this.averageLengthLabel = new System.Windows.Forms.Label();
             this.entropyLabel = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
@@ -98,9 +100,9 @@ namespace TiK_KR
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.messageForCheck_textBox);
             this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Location = new System.Drawing.Point(175, 269);
+            this.groupBox2.Location = new System.Drawing.Point(108, 303);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(472, 249);
+            this.groupBox2.Size = new System.Drawing.Size(599, 229);
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Проверка данных";
@@ -201,6 +203,8 @@ namespace TiK_KR
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label19);
+            this.groupBox1.Controls.Add(this.poly_textBox);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.label7);
@@ -211,17 +215,34 @@ namespace TiK_KR
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.message16_textBox);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(175, 22);
+            this.groupBox1.Location = new System.Drawing.Point(108, 22);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(472, 241);
+            this.groupBox1.Size = new System.Drawing.Size(599, 275);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Вычисление CRC";
             // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(92, 34);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(56, 13);
+            this.label19.TabIndex = 11;
+            this.label19.Text = "Полином:";
+            // 
+            // poly_textBox
+            // 
+            this.poly_textBox.Location = new System.Drawing.Point(151, 31);
+            this.poly_textBox.Name = "poly_textBox";
+            this.poly_textBox.Size = new System.Drawing.Size(294, 20);
+            this.poly_textBox.TabIndex = 10;
+            this.poly_textBox.Text = "100110001";
+            // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(42, 154);
+            this.label10.Location = new System.Drawing.Point(42, 197);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(46, 13);
             this.label10.TabIndex = 9;
@@ -235,7 +256,7 @@ namespace TiK_KR
             "8",
             "10",
             "16"});
-            this.comboBox1.Location = new System.Drawing.Point(45, 40);
+            this.comboBox1.Location = new System.Drawing.Point(45, 83);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(41, 21);
             this.comboBox1.TabIndex = 8;
@@ -244,7 +265,7 @@ namespace TiK_KR
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(42, 89);
+            this.label7.Location = new System.Drawing.Point(42, 132);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(46, 13);
             this.label7.TabIndex = 7;
@@ -253,7 +274,7 @@ namespace TiK_KR
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(9, 43);
+            this.label6.Location = new System.Drawing.Point(9, 86);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(34, 13);
             this.label6.TabIndex = 6;
@@ -261,7 +282,7 @@ namespace TiK_KR
             // 
             // message2_textBox
             // 
-            this.message2_textBox.Location = new System.Drawing.Point(92, 89);
+            this.message2_textBox.Location = new System.Drawing.Point(92, 132);
             this.message2_textBox.Multiline = true;
             this.message2_textBox.Name = "message2_textBox";
             this.message2_textBox.ReadOnly = true;
@@ -270,7 +291,7 @@ namespace TiK_KR
             // 
             // CalculateCRC_button
             // 
-            this.CalculateCRC_button.Location = new System.Drawing.Point(211, 203);
+            this.CalculateCRC_button.Location = new System.Drawing.Point(211, 246);
             this.CalculateCRC_button.Name = "CalculateCRC_button";
             this.CalculateCRC_button.Size = new System.Drawing.Size(111, 23);
             this.CalculateCRC_button.TabIndex = 4;
@@ -280,7 +301,7 @@ namespace TiK_KR
             // 
             // CalculatedCRC_textBox
             // 
-            this.CalculatedCRC_textBox.Location = new System.Drawing.Point(92, 154);
+            this.CalculatedCRC_textBox.Location = new System.Drawing.Point(92, 197);
             this.CalculatedCRC_textBox.Multiline = true;
             this.CalculatedCRC_textBox.Name = "CalculatedCRC_textBox";
             this.CalculatedCRC_textBox.Size = new System.Drawing.Size(353, 43);
@@ -289,7 +310,7 @@ namespace TiK_KR
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(89, 135);
+            this.label2.Location = new System.Drawing.Point(89, 178);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(32, 13);
             this.label2.TabIndex = 3;
@@ -297,7 +318,7 @@ namespace TiK_KR
             // 
             // message16_textBox
             // 
-            this.message16_textBox.Location = new System.Drawing.Point(92, 40);
+            this.message16_textBox.Location = new System.Drawing.Point(92, 83);
             this.message16_textBox.Multiline = true;
             this.message16_textBox.Name = "message16_textBox";
             this.message16_textBox.Size = new System.Drawing.Size(353, 43);
@@ -307,7 +328,7 @@ namespace TiK_KR
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(89, 24);
+            this.label1.Location = new System.Drawing.Point(92, 67);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(95, 13);
             this.label1.TabIndex = 1;
@@ -318,7 +339,7 @@ namespace TiK_KR
             this.groupBox3.Controls.Add(this.label18);
             this.groupBox3.Controls.Add(this.label17);
             this.groupBox3.Controls.Add(this.label15);
-            this.groupBox3.Controls.Add(this.button1);
+            this.groupBox3.Controls.Add(this.buildHuffmanTree_button);
             this.groupBox3.Controls.Add(this.label13);
             this.groupBox3.Controls.Add(this.huffmanCode_textBox);
             this.groupBox3.Controls.Add(this.dataGridView1);
@@ -330,6 +351,62 @@ namespace TiK_KR
             this.groupBox3.TabIndex = 11;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Кодирование";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(3, 398);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(99, 15);
+            this.label18.TabIndex = 15;
+            this.label18.Text = "Код Хаффмана";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(6, 267);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(123, 15);
+            this.label17.TabIndex = 14;
+            this.label17.Text = "Входное сообщение";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label15.Location = new System.Drawing.Point(278, 382);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(28, 31);
+            this.label15.TabIndex = 11;
+            this.label15.Text = "↓";
+            // 
+            // buildHuffmanTree_button
+            // 
+            this.buildHuffmanTree_button.Location = new System.Drawing.Point(171, 387);
+            this.buildHuffmanTree_button.Name = "buildHuffmanTree_button";
+            this.buildHuffmanTree_button.Size = new System.Drawing.Size(101, 23);
+            this.buildHuffmanTree_button.TabIndex = 1;
+            this.buildHuffmanTree_button.Text = "Закодировать";
+            this.buildHuffmanTree_button.UseVisualStyleBackColor = true;
+            this.buildHuffmanTree_button.Click += new System.EventHandler(this.buildHuffmanTree_button_Click);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label13.Location = new System.Drawing.Point(137, 382);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(28, 31);
+            this.label13.TabIndex = 10;
+            this.label13.Text = "↓";
+            // 
+            // huffmanCode_textBox
+            // 
+            this.huffmanCode_textBox.Location = new System.Drawing.Point(6, 416);
+            this.huffmanCode_textBox.Multiline = true;
+            this.huffmanCode_textBox.Name = "huffmanCode_textBox";
+            this.huffmanCode_textBox.Size = new System.Drawing.Size(434, 96);
+            this.huffmanCode_textBox.TabIndex = 3;
             // 
             // dataGridView1
             // 
@@ -344,15 +421,38 @@ namespace TiK_KR
             this.dataGridView1.Size = new System.Drawing.Size(434, 244);
             this.dataGridView1.TabIndex = 0;
             // 
-            // button1
+            // Symbol
             // 
-            this.button1.Location = new System.Drawing.Point(171, 387);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(101, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Закодировать";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.Symbol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Symbol.FillWeight = 60.9137F;
+            this.Symbol.HeaderText = "Символ";
+            this.Symbol.Name = "Symbol";
+            this.Symbol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Symbol.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.Symbol.Width = 63;
+            // 
+            // Probability
+            // 
+            this.Probability.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Probability.FillWeight = 119.5431F;
+            this.Probability.HeaderText = "Вероятность";
+            this.Probability.Name = "Probability";
+            // 
+            // Код
+            // 
+            this.Код.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Код.FillWeight = 119.5431F;
+            this.Код.HeaderText = "Код";
+            this.Код.Name = "Код";
+            // 
+            // huffmanInputStr_textBox
+            // 
+            this.huffmanInputStr_textBox.Location = new System.Drawing.Point(6, 285);
+            this.huffmanInputStr_textBox.Multiline = true;
+            this.huffmanInputStr_textBox.Name = "huffmanInputStr_textBox";
+            this.huffmanInputStr_textBox.Size = new System.Drawing.Size(434, 96);
+            this.huffmanInputStr_textBox.TabIndex = 2;
+            this.huffmanInputStr_textBox.Text = "is desired to reprogram, for example a talk group";
             // 
             // groupBox4
             // 
@@ -360,7 +460,7 @@ namespace TiK_KR
             this.groupBox4.Controls.Add(this.label16);
             this.groupBox4.Controls.Add(this.label11);
             this.groupBox4.Controls.Add(this.label12);
-            this.groupBox4.Controls.Add(this.button2);
+            this.groupBox4.Controls.Add(this.decodeHuffman_button);
             this.groupBox4.Controls.Add(this.textBox2);
             this.groupBox4.Controls.Add(this.textBox3);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -370,6 +470,26 @@ namespace TiK_KR
             this.groupBox4.TabIndex = 10;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Декодирование";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label14.Location = new System.Drawing.Point(260, 137);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(28, 31);
+            this.label14.TabIndex = 13;
+            this.label14.Text = "↓";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label16.Location = new System.Drawing.Point(41, 137);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(28, 31);
+            this.label16.TabIndex = 12;
+            this.label16.Text = "↓";
             // 
             // label11
             // 
@@ -389,15 +509,15 @@ namespace TiK_KR
             this.label12.TabIndex = 8;
             this.label12.Text = "Закодированное сообщение";
             // 
-            // button2
+            // decodeHuffman_button
             // 
-            this.button2.Location = new System.Drawing.Point(109, 140);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 23);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Декодировать";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.decodeHuffman_button.Location = new System.Drawing.Point(109, 140);
+            this.decodeHuffman_button.Name = "decodeHuffman_button";
+            this.decodeHuffman_button.Size = new System.Drawing.Size(100, 23);
+            this.decodeHuffman_button.TabIndex = 7;
+            this.decodeHuffman_button.Text = "Декодировать";
+            this.decodeHuffman_button.UseVisualStyleBackColor = true;
+            this.decodeHuffman_button.Click += new System.EventHandler(this.decodeHuffman_button_Click);
             // 
             // textBox2
             // 
@@ -451,105 +571,6 @@ namespace TiK_KR
             this.tabPage2.Text = "Код Хаффмана";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // huffmanInputStr_textBox
-            // 
-            this.huffmanInputStr_textBox.Location = new System.Drawing.Point(6, 285);
-            this.huffmanInputStr_textBox.Multiline = true;
-            this.huffmanInputStr_textBox.Name = "huffmanInputStr_textBox";
-            this.huffmanInputStr_textBox.Size = new System.Drawing.Size(434, 96);
-            this.huffmanInputStr_textBox.TabIndex = 2;
-            this.huffmanInputStr_textBox.Text = "is desired to reprogram, for example a talk group";
-            // 
-            // huffmanCode_textBox
-            // 
-            this.huffmanCode_textBox.Location = new System.Drawing.Point(6, 416);
-            this.huffmanCode_textBox.Multiline = true;
-            this.huffmanCode_textBox.Name = "huffmanCode_textBox";
-            this.huffmanCode_textBox.Size = new System.Drawing.Size(434, 96);
-            this.huffmanCode_textBox.TabIndex = 3;
-            // 
-            // Symbol
-            // 
-            this.Symbol.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.Symbol.FillWeight = 60.9137F;
-            this.Symbol.HeaderText = "Символ";
-            this.Symbol.Name = "Symbol";
-            this.Symbol.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Symbol.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            this.Symbol.Width = 63;
-            // 
-            // Probability
-            // 
-            this.Probability.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Probability.FillWeight = 119.5431F;
-            this.Probability.HeaderText = "Вероятность";
-            this.Probability.Name = "Probability";
-            // 
-            // Код
-            // 
-            this.Код.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Код.FillWeight = 119.5431F;
-            this.Код.HeaderText = "Код";
-            this.Код.Name = "Код";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label13.Location = new System.Drawing.Point(137, 382);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(28, 31);
-            this.label13.TabIndex = 10;
-            this.label13.Text = "↓";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label15.Location = new System.Drawing.Point(278, 382);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(28, 31);
-            this.label15.TabIndex = 11;
-            this.label15.Text = "↓";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label14.Location = new System.Drawing.Point(260, 137);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(28, 31);
-            this.label14.TabIndex = 13;
-            this.label14.Text = "↓";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label16.Location = new System.Drawing.Point(41, 137);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(28, 31);
-            this.label16.TabIndex = 12;
-            this.label16.Text = "↓";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(6, 267);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(123, 15);
-            this.label17.TabIndex = 14;
-            this.label17.Text = "Входное сообщение";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(3, 398);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(99, 15);
-            this.label18.TabIndex = 15;
-            this.label18.Text = "Код Хаффмана";
-            // 
             // averageLengthLabel
             // 
             this.averageLengthLabel.AutoSize = true;
@@ -575,7 +596,7 @@ namespace TiK_KR
             this.ClientSize = new System.Drawing.Size(821, 578);
             this.Controls.Add(this.tabControl1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Код Хаффмана и CRC";
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -619,11 +640,11 @@ namespace TiK_KR
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buildHuffmanTree_button;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button decodeHuffman_button;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TabControl tabControl1;
@@ -642,6 +663,8 @@ namespace TiK_KR
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label averageLengthLabel;
         private System.Windows.Forms.Label entropyLabel;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TextBox poly_textBox;
     }
 }
 

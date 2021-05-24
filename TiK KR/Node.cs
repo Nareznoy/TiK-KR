@@ -8,13 +8,14 @@ namespace TiK_KR
 {
     internal class Node : IComparable<Node>
     {
-        public string Code; // Код узла
-        public string Symbol; // Символ узла
-        public double Frequency; // Частота узла
+        private Node _parent; // Предок
 
-        public Node Left; // Левый потомок
-        public Node Right; // Правый потомок
-        public Node Parent; // Предок
+        public string Code { get; set; }
+        public string Symbol { get; }
+        public double Frequency { get; }
+
+        public Node Left { get; }
+        public Node Right { get; }
 
 
         public Node(double frequency, string symbol)
@@ -62,8 +63,8 @@ namespace TiK_KR
         public static Node operator +(Node lNode, Node rNode)
         {
             var newNode = new Node(lNode.Frequency + rNode.Frequency, lNode, rNode);
-            lNode.Parent = newNode;
-            rNode.Parent = newNode;
+            lNode._parent = newNode;
+            rNode._parent = newNode;
             return newNode;
         }
     }

@@ -2,13 +2,18 @@
 
 namespace TiK_LR__6
 {
-    internal static class CRC
+    internal class CRC
     {
-        private static readonly long _poly = 0b100110001; // Генераторный полином: x^
+        private readonly long _poly; // Генераторный полином
+        private readonly int _polyLength;
 
-        private static readonly int _polyLength = (int) Math.Log(_poly, 2) + 1;
+        public CRC(long polynom)
+        {
+            _poly = polynom;
+            _polyLength = (int)Math.Log(_poly, 2) + 1;
+        }
 
-        public static long CalculateCRC(long inputCode, bool isCheck = false)
+        public long CalculateCRC(long inputCode, bool isCheck = false)
         {
             // Добавление в конце принятого сообщения нулей
             if (!isCheck)
@@ -19,7 +24,7 @@ namespace TiK_LR__6
             return inputCode;
         }
 
-        public static long XOR(long inputCode, long poly)
+        public long XOR(long inputCode, long poly)
         {
             var ret = inputCode >> ((int) Math.Log(inputCode, 2) + 1 - ((int) Math.Log(poly, 2) + 1));
             ret ^= poly;
@@ -28,7 +33,7 @@ namespace TiK_LR__6
                 Convert.ToString(ret, 2) + Convert.ToString(inputCode, 2).Substring((int) Math.Log(poly, 2) + 1), 2);
         }
 
-        public static bool CheckMessage(long message, long crc)
+        public bool CheckMessage(long message, long crc)
         {
             message <<= _polyLength - 1; // Добавление в конец сообщения нулей
             var messagePlusCrcInt = message + crc; // Прибавление к сообщению CRC кода

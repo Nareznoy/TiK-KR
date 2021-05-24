@@ -4,34 +4,22 @@ using System;
 
 namespace TiK_KR
 {
-    internal class HuffmanTree
+    static class HuffmanTree
     {
-        private Node _head;
-        private Dictionary<string, double> _alphabet;
-        private Dictionary<string, string> _codesDictionary;
+        private static Node _head;
+        private static Dictionary<string, double> _alphabet;
+        private static Dictionary<string, string> _codesDictionary;
 
-        public Dictionary<string, string> GetCodesDictionary
-        {
-            get
-            {
-                return _codesDictionary;
-            }
-        }
+        public static Dictionary<string, string> GetCodesDictionary => _codesDictionary;
 
-        public Dictionary<string, double> GetAlphabet
-        {
-            get
-            {
-                return _alphabet;
-            }
-        }
+        public static Dictionary<string, double> GetAlphabet => _alphabet;
 
 
         /// <summary>
         ///     Метод кодирования
         /// </summary>
         /// <param name="inputNodes"> Очередь входных узлов </param>
-        public string Encode(string inputStr)
+        public static string Encode(string inputStr)
         {
             _alphabet = CalculateAlphabet(inputStr);
 
@@ -62,7 +50,7 @@ namespace TiK_KR
             return outputHuffmanCode;
         }
 
-        private Dictionary<string, double> CalculateAlphabet(string inputStr)
+        private static Dictionary<string, double> CalculateAlphabet(string inputStr)
         {
             var alphabet = inputStr
                 .GroupBy(c => c.ToString().ToLower())
@@ -78,7 +66,7 @@ namespace TiK_KR
         ///     Получение словаря кодов для символов обходом дерева в глубину
         /// </summary>
         /// <returns></returns>
-        private Dictionary<string, string> CalculateCodesDictionary()
+        private static Dictionary<string, string> CalculateCodesDictionary()
         {
             _head.FindCode();
             _codesDictionary = new Dictionary<string, string>();
@@ -108,7 +96,7 @@ namespace TiK_KR
         /// </summary>
         /// <param name="encodedString"> Входная закодированная строка </param>
         /// <returns> Возвращает декодированную строку в коде Хаффмана </returns>
-        public string Decode(string encodedString)
+        public static string Decode(string encodedString)
         {
             var decodeString = "";
             var currentNode = _head;
@@ -139,7 +127,7 @@ namespace TiK_KR
             return decodeString;
         }
 
-        public double CalculateEntropy()
+        public static double CalculateEntropy()
         {
             double entropy = 0;
             foreach (KeyValuePair<string, double> pair in _alphabet)
@@ -149,7 +137,7 @@ namespace TiK_KR
             return -entropy;
         }
 
-        public double CalculateAverageCodeLength()
+        public static double CalculateAverageCodeLength()
         {
             double averageCodeLength = 0;
             foreach (KeyValuePair<string, double> pair in _alphabet)
