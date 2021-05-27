@@ -21,8 +21,6 @@ namespace TiK_KR
         private readonly List<bool> _isCorrect = new List<bool>(); // Содержит информацию о проверенных блоках данных
         private readonly List<long> _messagesForCheck = new List<long>(); // Принятые сообщения для проверки
 
-        //private HuffmanTree _huffmanTree;
-
         public Form1()
         {
             InitializeComponent();
@@ -30,24 +28,6 @@ namespace TiK_KR
 
         private void CalculateCRC_button_Click_1(object sender, EventArgs e)
         {
-            //if ((Regex.Replace(poly_textBox.Text, @"[0-1]+", "") != "") || poly_textBox.Text == "")
-            //{
-            //    MessageBox.Show("Неверный формат полинома", "Ошибка!");
-            //    return;
-            //}
-
-            //if (message16_textBox.Text == "")
-            //{
-            //    MessageBox.Show("Введите входные данные для получения CRC!", "Ошибка!");
-            //    return;
-            //}
-
-            //if ((Regex.Replace(messageForCheck_textBox.Text, basePatterns[comboBox1.SelectedIndex], "") != ""))
-            //{
-            //    MessageBox.Show("Неверный формат входных данных для получения CRC!", "Ошибка!");
-            //    return;
-            //}
-
             if (!IsValidCRC())
             {
                 return;
@@ -69,15 +49,7 @@ namespace TiK_KR
             var stringMessages = message16_textBox.Text.Split();
             foreach (var str in stringMessages)
             {
-                //try
-                //{
-                    _inputMessages.Add(Convert.ToInt64(str, fromBase));
-                //}
-                //catch
-                //{
-                //    MessageBox.Show("Неверные входные данные для получения CRC!", "Ошибка!");
-                //    return;
-                //}
+                _inputMessages.Add(Convert.ToInt64(str, fromBase));
 
                 message2_textBox.Text += Convert.ToString(_inputMessages.Last(), 2) + " ";
 
@@ -94,7 +66,6 @@ namespace TiK_KR
             {
                 return;
             }
-
 
             _messagesForCheck.Clear();
 
@@ -129,9 +100,13 @@ namespace TiK_KR
 
         private void buildHuffmanTree_button_Click(object sender, EventArgs e)
         {
+            if (!IsValidHuffmanEncode())
+            {
+                return;
+            }
+
             dataGridView1.Rows.Clear();
 
-            //_huffmanTree = new HuffmanTree();
             huffmanCode_textBox.Text = HuffmanTree.Encode(huffmanInputStr_textBox.Text); // Построение дерева Хаффмана
 
             entropyLabel.Text = "Энтропия: " + Math.Round(HuffmanTree.CalculateEntropy(), 3).ToString();
@@ -153,7 +128,7 @@ namespace TiK_KR
                 return;
             }
 
-            textBox3.Text = HuffmanTree.Decode(textBox2.Text);
+            encodedMessage_textBox.Text = HuffmanTree.Decode(codedMessage_textBox.Text);
         }
 
         private bool IsValidCRC()
@@ -201,7 +176,7 @@ namespace TiK_KR
             return true;
         }
 
-        private bool IsValidHuffman()
+        private bool IsValidHuffmanEncode()
         {
             if (huffmanInputStr_textBox.Text == "")
             {
@@ -214,7 +189,7 @@ namespace TiK_KR
 
         private bool IsValidHuffmanDecode()
         {
-            if (textBox2.Text == "")
+            if (codedMessage_textBox.Text == "")
             {
                 MessageBox.Show("Введите входные данные для декодироваия кода!", "Ошибка!");
                 return false;
@@ -226,7 +201,7 @@ namespace TiK_KR
                 return false;
             }
 
-            if (Regex.Replace(textBox2.Text, @"[0-1]+", "") != "")
+            if (Regex.Replace(codedMessage_textBox.Text, @"[0-1]+", "") != "")
             {
                 MessageBox.Show("Неверный формат входных данных для проверки!", "Ошибка!");
                 return false;

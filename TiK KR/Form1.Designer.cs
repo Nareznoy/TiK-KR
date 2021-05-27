@@ -71,8 +71,8 @@ namespace TiK_KR
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.decodeHuffman_button = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.codedMessage_textBox = new System.Windows.Forms.TextBox();
+            this.encodedMessage_textBox = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
@@ -461,8 +461,8 @@ namespace TiK_KR
             this.groupBox4.Controls.Add(this.label11);
             this.groupBox4.Controls.Add(this.label12);
             this.groupBox4.Controls.Add(this.decodeHuffman_button);
-            this.groupBox4.Controls.Add(this.textBox2);
-            this.groupBox4.Controls.Add(this.textBox3);
+            this.groupBox4.Controls.Add(this.codedMessage_textBox);
+            this.groupBox4.Controls.Add(this.encodedMessage_textBox);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.groupBox4.Location = new System.Drawing.Point(458, 239);
             this.groupBox4.Name = "groupBox4";
@@ -519,21 +519,21 @@ namespace TiK_KR
             this.decodeHuffman_button.UseVisualStyleBackColor = true;
             this.decodeHuffman_button.Click += new System.EventHandler(this.decodeHuffman_button_Click);
             // 
-            // textBox2
+            // codedMessage_textBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(6, 38);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(317, 96);
-            this.textBox2.TabIndex = 5;
+            this.codedMessage_textBox.Location = new System.Drawing.Point(6, 38);
+            this.codedMessage_textBox.Multiline = true;
+            this.codedMessage_textBox.Name = "codedMessage_textBox";
+            this.codedMessage_textBox.Size = new System.Drawing.Size(317, 96);
+            this.codedMessage_textBox.TabIndex = 5;
             // 
-            // textBox3
+            // encodedMessage_textBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(6, 184);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(317, 96);
-            this.textBox3.TabIndex = 6;
+            this.encodedMessage_textBox.Location = new System.Drawing.Point(6, 184);
+            this.encodedMessage_textBox.Multiline = true;
+            this.encodedMessage_textBox.Name = "encodedMessage_textBox";
+            this.encodedMessage_textBox.Size = new System.Drawing.Size(317, 96);
+            this.encodedMessage_textBox.TabIndex = 6;
             // 
             // tabControl1
             // 
@@ -645,8 +645,8 @@ namespace TiK_KR
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button decodeHuffman_button;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox codedMessage_textBox;
+        private System.Windows.Forms.TextBox encodedMessage_textBox;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
