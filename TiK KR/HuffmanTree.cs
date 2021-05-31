@@ -144,8 +144,7 @@ namespace TiK_KR
             {
                 string currentStr = pair.Key;
                 _codesDictionary.TryGetValue(currentStr, out string code);
-                _alphabet.TryGetValue(currentStr, out double probability);
-                averageCodeLength += code.Length * probability;
+                averageCodeLength += code.Length * pair.Value;
             }
             return averageCodeLength;
         }

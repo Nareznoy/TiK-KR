@@ -26,12 +26,21 @@ namespace TiK_LR__6
 
         public long XOR(long inputCode, long poly)
         {
-            var ret = inputCode >> ((int) Math.Log(inputCode, 2) + 1 - ((int) Math.Log(poly, 2) + 1));
+            var ret = inputCode >> ((int)Math.Log(inputCode, 2) + 1 - ((int)Math.Log(poly, 2) + 1));
             ret ^= poly;
 
             return Convert.ToInt64(
-                Convert.ToString(ret, 2) + Convert.ToString(inputCode, 2).Substring((int) Math.Log(poly, 2) + 1), 2);
+                Convert.ToString(ret, 2) + Convert.ToString(inputCode, 2).Substring((int)Math.Log(poly, 2) + 1), 2);
         }
+
+        //public long XORString(long inputCode, long poly)
+        //{
+        //    var ret = Convert.ToInt64(Convert.ToString(inputCode, 2).Substring(0, ((int)Math.Log(poly, 2) + 1)), 2);
+        //    ret ^= poly;
+
+        //    return Convert.ToInt64(
+        //        Convert.ToString(ret, 2) + Convert.ToString(inputCode, 2).Substring((int)Math.Log(poly, 2) + 1), 2);
+        //}
 
         public bool CheckMessage(long message, long crc)
         {
